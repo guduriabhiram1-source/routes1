@@ -272,3 +272,75 @@ Open your browser:
 * Routes can accept **path parameters** and **query parameters**.
 * FastAPI automatically generates interactive API documentation at `/docs`.
 * Every API endpoint in a FastAPI application is defined as a route.
+# FastAPI CRUD API
+
+A simple FastAPI project demonstrating the basic CRUD (Create, Read, Update, Delete) operations using GET, POST, PUT, and DELETE methods.
+
+## API Methods
+
+### GET
+- Retrieves data from the server.
+- Does not modify any data.
+- Example:
+  ```
+  GET /students
+  ```
+
+### POST
+- Creates a new resource or adds new data.
+- Example:
+  ```
+  POST /students
+  ```
+- Sample Request Body:
+  ```json
+  {
+    "id": 1,
+    "name": "Abhi",
+    "age": 22
+  }
+  ```
+
+### PUT
+- Updates an existing resource.
+- Example:
+  ```
+  PUT /students/1
+  ```
+- Sample Request Body:
+  ```json
+  {
+    "id": 1,
+    "name": "Abhi Ram",
+    "age": 23
+  }
+  ```
+
+### DELETE
+- Deletes an existing resource.
+- Example:
+  ```
+  DELETE /students/1
+  ```
+
+## Run the Project
+
+Install the required packages:
+
+```bash
+pip install fastapi uvicorn
+```
+
+Start the server:
+
+```bash
+uvicorn main:app --reload
+```
+
+Open your browser:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+Swagger UI allows you to test all the API endpoints interactively.
